@@ -20,7 +20,7 @@ var storage	=	multer.diskStorage({
     callback(null, './uploads/'+file.fieldname);
   },
   filename: function (req, file, callback) {
-    if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(file.filename)){
+    if((/\.(gif|jpg|jpeg|tiff|png)$/).test(file.originalname)){
 
       imagenADevolver=req.headers.userid +'.'+ file.mimetype.split('/')[1]
       callback(null, req.headers.userid +'.'+ file.mimetype.split('/')[1]);
